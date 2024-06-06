@@ -1,0 +1,14 @@
+C:\Users\admin\Downloads\SchoolManagementSystem\DAL\bin\Debug\DAL.dll
+C:\Users\admin\Downloads\SchoolManagementSystem\DAL\bin\Debug\DAL.pdb
+C:\Users\admin\Downloads\SchoolManagementSystem\DAL\obj\Debug\DAL.dll
+C:\Users\admin\Downloads\SchoolManagementSystem\DAL\obj\Debug\DAL.pdb
+C:\Users\Malik\Downloads\SchoolManagementSystem\DAL\bin\Debug\DAL.dll
+C:\Users\Malik\Downloads\SchoolManagementSystem\DAL\bin\Debug\DAL.pdb
+C:\Users\Malik\Downloads\SchoolManagementSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Malik\Downloads\SchoolManagementSystem\DAL\obj\Debug\DAL.dll
+C:\Users\Malik\Downloads\SchoolManagementSystem\DAL\obj\Debug\DAL.pdb
+F:\Development\SchoolManagementSystem\DAL\bin\Debug\DAL.dll
+F:\Development\SchoolManagementSystem\DAL\bin\Debug\DAL.pdb
+F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.dll
+F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.pdb
