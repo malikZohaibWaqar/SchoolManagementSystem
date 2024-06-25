@@ -49,7 +49,7 @@ namespace SchoolManagementSystem.HR_Management
 
                 if (EmployeeID > 0)
                 {
-                    EmployeeEntity EE = new EmployeeRepository().GetEmployeeByID(EmployeeID);
+                    EmployeeEntity EE = new EmployeeRepository(new DBTransections()).GetEmployeeByID(EmployeeID);
                     lblID.Text = EE.ID.ToString();
                     txtFirstName.Text = EE.FirstName;
                     txtLastName.Text = EE.LastName;
@@ -114,7 +114,7 @@ namespace SchoolManagementSystem.HR_Management
                         EE.ImageName = EmployeeImageName;
                     }
 
-                    if (new VehicleRepository().GetVehicleCapacity(EE.VehicleID) <= new EmployeeRepository().GetNumOfEmployeeByVehiceID(EE.VehicleID))
+                    if (new VehicleRepository().GetVehicleCapacity(EE.VehicleID) <= new EmployeeRepository(new DBTransections()).GetNumOfEmployeeByVehiceID(EE.VehicleID))
                     {
                         if (new Component.confirmationBox("All seats are occupied in selected vehicle. Do you still want to proceed").ShowDialog() == DialogResult.Yes)
                             AddEmployee(EE);
@@ -137,7 +137,7 @@ namespace SchoolManagementSystem.HR_Management
 
         private void AddEmployee(EmployeeEntity EE)
         {
-            int res = new EmployeeRepository().EnrollAndUpdateEmployee(EE);
+            int res = new EmployeeRepository(new DBTransections()).EnrollAndUpdateEmployee(EE);
             if (res > 0)
                 Utility.showMessage("Success", "Your record has been successfully saved.Navigate to list to view record", "success");
             if(res == -2)

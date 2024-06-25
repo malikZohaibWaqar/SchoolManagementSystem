@@ -12,3 +12,10 @@ F:\Development\SchoolManagementSystem\DAL\bin\Debug\DAL.pdb
 F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.dll
 F:\Development\SchoolManagementSystem\DAL\obj\Debug\DAL.pdb
+F:\Git_Projects\SchoolManagementSystem\DAL\obj\Debug\DAL.dll
+F:\Git_Projects\SchoolManagementSystem\DAL\obj\Debug\DAL.pdb
+F:\Git_Projects\SchoolManagementSystem\DAL\bin\Debug\DAL.dll
+F:\Git_Projects\SchoolManagementSystem\DAL\bin\Debug\DAL.pdb
+F:\Git_Projects\SchoolManagementSystem\DAL\bin\Debug\EntityFramework.dll
+F:\Git_Projects\SchoolManagementSystem\DAL\bin\Debug\EntityFramework.xml
+F:\Git_Projects\SchoolManagementSystem\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

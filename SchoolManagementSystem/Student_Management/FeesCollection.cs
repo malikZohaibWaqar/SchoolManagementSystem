@@ -167,7 +167,7 @@ namespace SchoolManagementSystem.Student_Management
         }
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBoxStudent.DataSource = new StudentRepository().GetALLStudents(int.Parse(comboBoxClass.SelectedValue.ToString()));
+            comboBoxStudent.DataSource = new StudentRepository(new DBTransections()).GetALLStudents(int.Parse(comboBoxClass.SelectedValue.ToString()));
             comboBoxStudent.DisplayMember = "FirstName";
             comboBoxStudent.ValueMember = "ID";
         }

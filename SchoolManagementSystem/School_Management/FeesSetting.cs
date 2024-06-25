@@ -115,7 +115,7 @@ namespace SchoolManagementSystem.School_Management
                 if (ids.Length > 0)
                 {
                     bool confirm = false;
-                    List<StudentEntity> entities = new StudentRepository().GetStudentsByFeesCategoryID(ids);
+                    List<StudentEntity> entities = new StudentRepository(new DBTransections()).GetStudentsByFeesCategoryID(ids);
                     if (entities != null && entities.Count > 0)
                         if (new Component.confirmationBox("Student registered with this fees category will also be deleted.Still want to proceed?").ShowDialog() == DialogResult.Yes)
                             confirm = true;
@@ -124,7 +124,7 @@ namespace SchoolManagementSystem.School_Management
                         this.Cursor = Cursors.WaitCursor;
                         foreach (StudentEntity entity in entities)
                         {
-                            if (new StudentRepository().DeleteStudent(entity) > 0)
+                            if (new StudentRepository(new DBTransections()).DeleteStudent(entity) > 0)
                             {
                                 if (System.IO.File.Exists(Application.StartupPath + "\\Images\\Student\\" + entity.ImageName))
                                     System.IO.File.Delete(Application.StartupPath + "\\Images\\Student\\" + entity.ImageName);

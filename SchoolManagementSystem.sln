@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{48568037-52B0-4C45-B6A6-DCEEE6E00B14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagementSystem.UnitTests", "SchoolManagementSystem.UnitTests\SchoolManagementSystem.UnitTests.csproj", "{AABB734A-6D5A-4A2E-925E-B07C79CE111F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{48568037-52B0-4C45-B6A6-DCEEE6E00B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48568037-52B0-4C45-B6A6-DCEEE6E00B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48568037-52B0-4C45-B6A6-DCEEE6E00B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABB734A-6D5A-4A2E-925E-B07C79CE111F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABB734A-6D5A-4A2E-925E-B07C79CE111F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABB734A-6D5A-4A2E-925E-B07C79CE111F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABB734A-6D5A-4A2E-925E-B07C79CE111F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

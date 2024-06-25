@@ -131,7 +131,7 @@ namespace SchoolManagementSystem.Student_Management
                 {
                     foreach (string id in ids.Split(','))
                     {
-                        new StudentRepository().DeleteStudent(int.Parse(id));
+                        new StudentRepository(new DBTransections()).DeleteStudent(int.Parse(id));
                     }
                     bindDataGridView();
                     Utility.showMessage("Success", "Record deleted successfully", "success");

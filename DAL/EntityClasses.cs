@@ -189,7 +189,7 @@ namespace DAL
     public class ExpensesRepository
     {
         private DBTransections transection { get; set; }
-        public ExpensesRepository() { transection = new DBTransections(); }
+        public ExpensesRepository(DBTransections _transection) { transection = _transection; }
         public int AddExpenses(ExpensesEntity s)
         {
             try
@@ -488,8 +488,9 @@ namespace DAL
     }
     public class StudentRepository
     {
-        private DBTransections transection { get; set; }
-        public StudentRepository() { transection = new DBTransections(); }
+        private DBTransections transection;
+        //public StudentRepository() { transection = new DBTransections(); }
+        public StudentRepository(DBTransections _transection) { transection = _transection; }
         public int EnrollAndUpdateStudent(StudentEntity s)
         {
             try
@@ -952,8 +953,8 @@ namespace DAL
     }
     public class EmployeeRepository
     {
-        private DBTransections transection { get; set; }
-        public EmployeeRepository() { transection = new DBTransections(); }
+        private readonly DBTransections transection;
+        public EmployeeRepository(DBTransections _transection) { transection = _transection; }
         public int EnrollAndUpdateEmployee(EmployeeEntity s)
         {
             try

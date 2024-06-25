@@ -37,7 +37,7 @@ namespace SchoolManagementSystem.School_Management
                     ee.VehicleExpense = double.Parse(numVehicleExpense.Value.ToString());
                     ee.Description = txtDescription.Text;
 
-                    if (new ExpensesRepository().AddExpenses(ee) > 0)
+                    if (new ExpensesRepository(new DBTransections()).AddExpenses(ee) > 0)
                         Utility.showMessage("Success", "Your institute expenses has been successfully saved", "success");
                     else
                         Utility.showMessage("Error", "Oops ! unable to save record. Check logs for detail or contact service provider", "error");
@@ -58,7 +58,7 @@ namespace SchoolManagementSystem.School_Management
         {
             try
             {
-                List<ExpensesEntity> ee = new ExpensesRepository().GetALLExpenses(DateTime.Parse(txtDateGrid.Value.ToString()));
+                List<ExpensesEntity> ee = new ExpensesRepository(new DBTransections()).GetALLExpenses(DateTime.Parse(txtDateGrid.Value.ToString()));
                 dataGridView.SetPagedDataSource(Utility.ToDataTable(ee), bindingNavigator);
 
                 if (ee != null && ee.Count > 0)
@@ -126,7 +126,7 @@ namespace SchoolManagementSystem.School_Management
                 {
                     foreach (string id in ids.Split(','))
                     {
-                        new ExpensesRepository().DeleteExpensesByID(int.Parse(id));
+                        new ExpensesRepository(new DBTransections()).DeleteExpensesByID(int.Parse(id));
                     }
                     bindDataGridView();
                     Utility.showMessage("Success", "Record deleted successfully", "success");

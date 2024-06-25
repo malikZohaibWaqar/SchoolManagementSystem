@@ -120,7 +120,7 @@ namespace SchoolManagementSystem.Transport_Management
                     if (new Component.confirmationBox("Students and Employees availing this transport will be deallocated.Still want to proceed?").ShowDialog() == DialogResult.Yes)
                     {                        
                         string studentIDs = string.Empty;
-                        System.Data.DataTable dt =  new StudentRepository().GetStudentsByVehicleID(ids);
+                        System.Data.DataTable dt =  new StudentRepository(new DBTransections()).GetStudentsByVehicleID(ids);
                         if(dt != null && dt.Rows.Count > 0)
                         {
                             foreach (System.Data.DataRow row in dt.Rows)
@@ -132,7 +132,7 @@ namespace SchoolManagementSystem.Transport_Management
 
                         string EmpIDs = string.Empty;
                         
-                        dt = new EmployeeRepository().GetEmployeeByVehicleID(ids);
+                        dt = new EmployeeRepository(new DBTransections()).GetEmployeeByVehicleID(ids);
                         if(dt != null && dt.Rows.Count > 0)
                         {
                             foreach (System.Data.DataRow row in dt.Rows)

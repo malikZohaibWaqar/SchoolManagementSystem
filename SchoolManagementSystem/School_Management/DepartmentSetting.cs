@@ -111,7 +111,7 @@ namespace SchoolManagementSystem.School_Management
                 if (ids.Length > 0)
                 {
                     bool confirm = false;
-                    List<EmployeeEntity> entities = new EmployeeRepository().GetEmployeeByDepartmentID(ids);
+                    List<EmployeeEntity> entities = new EmployeeRepository(new DBTransections()).GetEmployeeByDepartmentID(ids);
                     if (entities != null && entities.Count > 0)
                         if (new Component.confirmationBox("Employee registered in this department will also be deleted.Still want to proceed?").ShowDialog() == DialogResult.Yes)
                             confirm = true;
@@ -119,7 +119,7 @@ namespace SchoolManagementSystem.School_Management
                     {
                         foreach (EmployeeEntity entity in entities)
                         {
-                            if (new EmployeeRepository().DeleteEmployee(entity) > 0)
+                            if (new EmployeeRepository(new DBTransections()).DeleteEmployee(entity) > 0)
                             {
                                 if (System.IO.File.Exists(Application.StartupPath + "\\Images\\Employee\\" + entity.ImageName))
                                     System.IO.File.Delete(Application.StartupPath + "\\Images\\Employee\\" + entity.ImageName);

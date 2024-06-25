@@ -45,12 +45,12 @@ namespace SchoolManagementSystem.Student_Management
 
                 if (StudentID == 0)
                 {
-                    rollNo = (new StudentRepository().GetMaxIDOfStudent() + 1) + "-" + (DateTime.Now.Month < 6 ? "s" : "f") + "-" + DateTime.Now.Year;
+                    rollNo = (new StudentRepository(new DBTransections()).GetMaxIDOfStudent() + 1) + "-" + (DateTime.Now.Month < 6 ? "s" : "f") + "-" + DateTime.Now.Year;
                     txtRollNo.Text = rollNo;
                 }
                 else
                 {
-                    StudentEntity SE = new StudentRepository().GetStudentByID(StudentID);
+                    StudentEntity SE = new StudentRepository(new DBTransections()).GetStudentByID(StudentID);
                     lblID.Text = SE.ID.ToString();
                     txtRollNo.Text = SE.RollNo;
                     txtFirstName.Text = SE.FirstName;
@@ -137,7 +137,7 @@ namespace SchoolManagementSystem.Student_Management
                         student.ImageName = StudentImageName;
                     }
 
-                    if (new VehicleRepository().GetVehicleCapacity(student.VehicleID) <= new StudentRepository().GetNumOfStudentByVehiceID(student.VehicleID) && student.VehicleID != 0)
+                    if (new VehicleRepository().GetVehicleCapacity(student.VehicleID) <= new StudentRepository(new DBTransections()).GetNumOfStudentByVehiceID(student.VehicleID) && student.VehicleID != 0)
                     {
                         if (new Component.confirmationBox("All seats are occupied in selected vehicle. Do you still want to proceed").ShowDialog() == DialogResult.Yes)
                             AddStudent(student);
@@ -160,7 +160,7 @@ namespace SchoolManagementSystem.Student_Management
         }
         private void AddStudent(StudentEntity student)
         {
-            int res = new StudentRepository().EnrollAndUpdateStudent(student);
+            int res = new StudentRepository(new DBTransections()).EnrollAndUpdateStudent(student);
             if (res > 0)
                 Utility.showMessage("Success", "Your record has been successfully saved.Navigate to list to view record", "success");
             if(res == -2)

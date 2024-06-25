@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DAL
 {
-    class ErrorLogger
+    public class ErrorLogger
     {
         public int ID { get; set; }
         public string FileName { get; set; }
@@ -40,6 +40,7 @@ namespace DAL
             }
             catch (Exception exp)
             {
+                
             }
         }
     }

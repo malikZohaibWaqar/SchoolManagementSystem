@@ -19,12 +19,12 @@ namespace SchoolManagementSystem.HR_Management
                 comboBoxDepartmentName.ValueMember = "ID";
                 comboBoxDepartmentName.SelectedIndexChanged += new EventHandler(comboBoxDepartmentName_SelectedIndexChanged);
 
-                comboBoxEmployeeName.DataSource = new EmployeeRepository().GetALLEmployees(int.Parse(comboBoxDepartmentName.SelectedValue.ToString()));
+                comboBoxEmployeeName.DataSource = new EmployeeRepository(new DBTransections()).GetALLEmployees(int.Parse(comboBoxDepartmentName.SelectedValue.ToString()));
                 comboBoxEmployeeName.DisplayMember = "FirstName";
                 comboBoxEmployeeName.ValueMember = "ID";
                 comboBoxEmployeeName.SelectedIndexChanged += new EventHandler(comboBoxEmployeeName_SelectedIndexChanged);
 
-                txtSalary.Text = new EmployeeRepository().GetEmployeeByID(int.Parse(comboBoxEmployeeName.SelectedValue.ToString())).Salary.ToString();
+                txtSalary.Text = new EmployeeRepository(new DBTransections()).GetEmployeeByID(int.Parse(comboBoxEmployeeName.SelectedValue.ToString())).Salary.ToString();
 
                 txtDateGrid.TextChanged += bindDataGridView_filterChanged;
 
@@ -86,7 +86,7 @@ namespace SchoolManagementSystem.HR_Management
         {
             try
             {
-                comboBoxEmployeeName.DataSource = new EmployeeRepository().GetALLEmployees(int.Parse(comboBoxDepartmentName.SelectedValue.ToString()));
+                comboBoxEmployeeName.DataSource = new EmployeeRepository(new DBTransections()).GetALLEmployees(int.Parse(comboBoxDepartmentName.SelectedValue.ToString()));
                 comboBoxEmployeeName.DisplayMember = "FirstName";
                 comboBoxEmployeeName.ValueMember = "ID";
             }
@@ -99,7 +99,7 @@ namespace SchoolManagementSystem.HR_Management
         }
         private void comboBoxEmployeeName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtSalary.Text = new EmployeeRepository().GetEmployeeByID(int.Parse(comboBoxEmployeeName.SelectedValue.ToString())).Salary.ToString();
+            txtSalary.Text = new EmployeeRepository(new DBTransections()).GetEmployeeByID(int.Parse(comboBoxEmployeeName.SelectedValue.ToString())).Salary.ToString();
         }
 
         #region Grid Methods

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace DAL
 {
-    class DBTransections : DbContext
+   public class DBTransections : DbContext
     {
-        public DBTransections() : 
-            base("name=ConStr"){}
+        public DBTransections() :  base("name=ConStr"){}
         
         public virtual DbSet<SchoolInfoEntity> SchoolInfo { get; set; }
         public virtual DbSet<ExpensesEntity> Expenses { get; set; }

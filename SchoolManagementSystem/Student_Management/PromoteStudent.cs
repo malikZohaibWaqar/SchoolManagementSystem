@@ -42,7 +42,7 @@ namespace SchoolManagementSystem.Student_Management
         }
         private void LoadGrid()
         {
-            List<StudentEntity> SE = new StudentRepository().GetALLStudents(int.Parse(comboBoxCurrentClass.SelectedValue.ToString()));
+            List<StudentEntity> SE = new StudentRepository(new DBTransections()).GetALLStudents(int.Parse(comboBoxCurrentClass.SelectedValue.ToString()));
             if (SE.Count > 0)
             {
                 panelStudentList.Controls.Clear();
@@ -90,7 +90,7 @@ namespace SchoolManagementSystem.Student_Management
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                if (new StudentRepository().PromoteStudentByClass(comboBoxCurrentClass.SelectedValue.ToString(), comboBoxPromoteClass.SelectedValue.ToString()) > 0)
+                if (new StudentRepository(new DBTransections()).PromoteStudentByClass(comboBoxCurrentClass.SelectedValue.ToString(), comboBoxPromoteClass.SelectedValue.ToString()) > 0)
                     Utility.showMessage("Success", "Students have been promoted successfully", "success");
                 else
                     Utility.showMessage("Error", "Oops ! unable to save record. Check logs for detail or contact service provider", "error");
@@ -112,7 +112,7 @@ namespace SchoolManagementSystem.Student_Management
                 var JoinedStudentIDs = String.Join(",", checkedCheckBox);
                 if (JoinedStudentIDs != "")
                 {
-                    if (new StudentRepository().PromoteStudentByID(JoinedStudentIDs, comboBoxPromoteClass.SelectedValue.ToString()) > 0)
+                    if (new StudentRepository(new DBTransections()).PromoteStudentByID(JoinedStudentIDs, comboBoxPromoteClass.SelectedValue.ToString()) > 0)
                         Utility.showMessage("Success", "Students have been promoted successfully", "success");
                     else
                         Utility.showMessage("Error", "Oops ! unable to save record. Check logs for detail or contact service provider", "error");
@@ -138,7 +138,7 @@ namespace SchoolManagementSystem.Student_Management
                 var JoinedStudentIDs = String.Join(",", checkedCheckBox);
                 if (JoinedStudentIDs != "")
                 {
-                    if (new StudentRepository().PassOutStudentByID(JoinedStudentIDs) > 0)
+                    if (new StudentRepository(new DBTransections()).PassOutStudentByID(JoinedStudentIDs) > 0)
                         Utility.showMessage("Success", "Students have been passes out successfully", "success");
                     else
                         Utility.showMessage("Error", "Oops ! unable to save record. Check logs for detail or contact service provider", "error");

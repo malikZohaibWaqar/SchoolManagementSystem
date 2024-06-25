@@ -138,7 +138,7 @@ namespace SchoolManagementSystem.HR_Management
                 {
                     foreach (string id in ids.Split(','))
                     {
-                        new EmployeeRepository().DeleteEmployee(int.Parse(id));
+                        new EmployeeRepository(new DBTransections()).DeleteEmployee(int.Parse(id));
                     }
                     bindDataGridView();
                     Utility.showMessage("Success", "Record deleted successfully", "success");
